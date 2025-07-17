@@ -38,6 +38,7 @@ dependencies {
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     //этим мы расширяем логирование и при запуске теста в консоль
     //будет выводиться больше данных
