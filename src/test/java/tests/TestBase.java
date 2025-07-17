@@ -12,12 +12,13 @@ import java.util.Map;
 
 public class TestBase {
 
-    public static final String SELENOID_URL = System.getProperty("SELENOID.URL");
+    public static final String SELENOID_URL = System.getProperty("selenoid_url");
 @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1600x900";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
+    System.out.println("SELENOID_URL = " + SELENOID_URL);
     Configuration.remote = SELENOID_URL + "/wd/hub";
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
