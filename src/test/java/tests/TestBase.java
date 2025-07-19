@@ -23,7 +23,6 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
     Configuration.remote = SELENOID_URL + "/wd/hub";
     Configuration.browser = BROWSER;
-    Configuration.browserVersion = System.getProperty("browser.version");
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
