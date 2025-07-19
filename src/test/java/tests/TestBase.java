@@ -13,7 +13,7 @@ import java.util.Map;
 public class TestBase {
 
     public static final String SELENOID_URL = System.getProperty("selenoid_url");
-    public static final String BROWSER = System.getProperty("browser");
+    public static final String BROWSER = System.getProperty("browser", "chrome");
 
 
     @BeforeAll
