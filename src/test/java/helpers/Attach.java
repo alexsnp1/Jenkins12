@@ -46,7 +46,7 @@ public class Attach extends TestBase {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = SELENOID_URL + "/video/" + sessionId() + ".mp4";
+        String videoUrl = "https://user1:1234@" + SELENOID_URL + "/video/" + sessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
