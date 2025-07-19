@@ -13,12 +13,16 @@ import java.util.Map;
 public class TestBase {
 
     public static final String SELENOID_URL = System.getProperty("selenoid_url");
+    public static final String BROWSER = System.getProperty("browser", "chrome");
+
 @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1600x900";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
     Configuration.remote = SELENOID_URL + "/wd/hub";
+    Configuration.browser = BROWSER;
+    System.out.println("Selected browser: " + BROWSER);
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
