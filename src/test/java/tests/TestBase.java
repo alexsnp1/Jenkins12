@@ -17,13 +17,14 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1600x900";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
     Configuration.remote = SELENOID_URL + "/wd/hub";
     Configuration.browser = System.getProperty("browser", "chrome");
     Configuration.browserVersion = System.getProperty("browser.version", "128.0");
+    Configuration.browserSize = System.getProperty("browser_size", "1600x900");
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("selenoid:options", Map.<String, Object>of(
